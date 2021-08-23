@@ -1,0 +1,180 @@
+.jobbra {
+    transform: rotate(180deg);
+}
+
+main {  
+background-image: url("imageArunachala/letöltés (6).jfif");
+background-color: transparent;
+background-size: cover;
+opacity: 0.2;
+background-position: top;
+}
+
+
+
+
+
+/* Kezdés: fő méretek beállítása: body, main és main-ben levő elemek (h1, #ablak, #thumbnail).
+Figyelem! A flexekben is vannak flex-grow arányok.
+Figyelem! Csak a body-n belüli legelső dobozba írunk % helyett vh-t, itt a vh jelenti a %-ot. Indoka: görgetésnél nem egy képernyőnyi az oldal magasság, hanem az oldalmagasság képlékeny. */
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    max-width: 100%;
+    height: 100vh;
+    margin:auto;
+    /* background-color: lightpink; */
+}
+
+h1 {
+    background-color: navy;
+}
+
+#ablak {
+    width: 55%;
+    height: 500px;
+    background-color: crimson;
+}
+
+#thumbnail {
+    background-color: orangered;
+}
+/* Bef:: fő méretek beállítása: body, main és main-ben levő elemek (h1, #ablak, #thumbnail).
+Figyelem! A flexekben is vannak flex-grow arányok. */
+
+
+
+/* Kezdés flex ablak: 3 elemét (sáv bal, kozep, sáv jobb) flexelem */
+#ablak {
+    display: flex;
+    justify-content: center;
+}
+
+.sav {
+    display: flex;
+    flex-grow: 1;
+    background-color: gold;
+}
+
+.kozep {
+    display: flex;
+    flex-grow: 10;
+    background-color: darkcyan;
+}
+/* Bef. flex ablak: 3 elemét (sáv bal, kozep, sáv jobb) flexelem */
+
+
+
+/* Kezdés flex közép: 3(4) elemét (képDoboza(kép), h2, p) flexelem. */
+.kozep {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kepdoboz {
+    display: flex;
+    flex-grow: 7;
+    background-color: greenyellow;
+}
+
+h2 {
+    display: flex;
+    flex-grow: 1;
+    margin: 0;
+    background-color: indigo;
+}
+
+p {
+    display: flex;
+    flex-grow: 2;
+    margin: 0;
+    background-color: lightblue;
+}
+/* Bef. flex közép: 3(4) elemét (képDoboza(kép), h2, p) flexelem. */
+
+
+/* Kezdés flex képdoboz: 1 elemét (kép) flexelem.
+Figyelem! kép-nél azért kell float none, mert így lesz a display block, amúgy inline lenne (webkalap oldalról tudom.) */
+.kepdoboz {
+    display: flex;
+    justify-content: center;
+}
+
+.kep {
+    float: none;
+    display: block;
+    display: flex;
+}
+/* Bef. flex képDoboza: 1 elemét (kép) flexelem */
+
+
+
+/* Kezdés flex main: 3 elemét (h1, ablak, thumbnail) flexelem. */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    display: flex;
+    flex-grow: 1;
+    margin: 0;
+}
+
+#ablak {
+display: flex;
+flex-grow: 10;
+}
+
+#thumbnail {
+    display: flex;
+    flex-grow: 4;
+}
+/* Bef. flex main: 3 elemét (h1, ablak, thumbnail) flexelem. */
+
+
+
+
+
+
+
+
+/*
+body nálam miből áll?
+
+body
+    main
+        h1
+        #ablak       (az egész nagy téglalap mindennel együtt)
+        #thumbnail
+    |_
+
+    JS befűzések
+|_
+
+
+#ablak nálam miből áll?
+
+        #ablak
+            sáv bal   
+                (nyíl balra div-ben)
+            közép     
+                (képdoboz (kép))
+                (h2)
+                (p)
+            sáv jobb  
+                (nyíl jobbra div-ben)
+
+Kérdés:
+Fő méretek: width és height hogy stimmel? (max, auto, % vagy px, flex-grow)
+Mit flex-eztem? (main, ablak, közép, képDoboza)
+*/
+
+
+
